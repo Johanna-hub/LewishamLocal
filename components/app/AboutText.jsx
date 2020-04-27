@@ -25,7 +25,7 @@ const About = () => {
   return (
       <Box>
         <AboutContainer>
-          <AboutText>Brixton Local.Life is part of the <AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> project.</AboutText>
+          <AboutText>Lewisham Local.Life is part of the <AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> project.</AboutText>
           <AboutText><AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> supports local communities during the COVID-19 lockdown by helping them easily set up websites that spread the word about independent businesses and services in their area.</AboutText>  
           <AboutText>This includes businesses that are still operational, new delivery services and other activities, such as community groups and local support.</AboutText>
           <AboutText>The information on this website was crowdsourced using a google spreadsheet.  For access to the spreadsheet to update an existing entry or add a new one, please request access <AboutLink href = "mailto: brixtonlocal@gmail.com">here</AboutLink>.</AboutText>
