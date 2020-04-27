@@ -14,6 +14,9 @@ margin-top: 0.75rem;
 const HeaderContainer = styled.div`
 margin: 2vh;
 margin-top: 4vh;
+@media (max-width: 768px) {
+  margin-top: 10.1vh;
+ }
 `
 const HeaderText = styled.p`
 font-family: Montserrat;
@@ -28,7 +31,7 @@ const Header = () => {
   return (
       <Box>
       <HeaderContainer>
-       <HeaderTitle>Brixton</HeaderTitle>
+       <HeaderTitle>Lewisham</HeaderTitle>
        <HeaderTitle>Local.Life</HeaderTitle>
        <HeaderText>Getting the word out for the local community and businesses during the COVID-19 lockdown</HeaderText>
        </HeaderContainer>
