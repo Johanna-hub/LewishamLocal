@@ -5,11 +5,13 @@ import { Box } from '../atoms';
 const AboutText = styled.p`
 font-family: SF Pro Text;
 font-size: 18px;
+margin: 8px;
 `
 const AboutContainer = styled(Box)`
 margin: 2vh;
 margin-top: 4vh;
-align-items: center;
+align-items: flex-start;
+width: 75%;
 @media (max-width: 768px) {
   margin-left: 1.5rem;
   margin-right: 1rem;
@@ -26,10 +28,13 @@ const About = () => {
       <Box>
         <AboutContainer>
           <AboutText>Lewisham Local.Life is part of the <AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> project.</AboutText>
+          <AboutText>Laura Padoan coordinated the entries for Lewisham</AboutText>
           <AboutText><AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> supports local communities during the COVID-19 lockdown by helping them easily set up websites that spread the word about independent businesses and services in their area.</AboutText>  
           <AboutText>This includes businesses that are still operational, new delivery services and other activities, such as community groups and local support.</AboutText>
           <AboutText>The information on this website was crowdsourced using a google spreadsheet.  For access to the spreadsheet to update an existing entry or add a new one, please request access <AboutLink href = "mailto: brixtonlocal@gmail.com">here</AboutLink>.</AboutText>
           <AboutText>To set up a similar project in your area please go to the <AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> website.</AboutText>
+          <AboutText><AboutLink href="https://www.lovelocal.life/">LoveLocal.Life</AboutLink> supports local communities during the COVID-19 lockdown by helping them easily set up websites that spread the word about independent businesses and services in their area.  
+          This includes businesses that are still operational, new delivery services and other activities, such as community groups and local support.</AboutText>
           <AboutText>To get in contact please  <AboutLink href = "mailto: brixtonlocal@gmail.com">email</AboutLink> us.</AboutText>
         </AboutContainer>
       </Box>
