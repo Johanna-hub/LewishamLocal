@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Lewisham Local.Life`,
     description: `Getting the word out for the local community and businesses during the COVID-19 lockdown`,
+    image: "/images/lewisham.jpeg",
   },
   plugins: [
     {
