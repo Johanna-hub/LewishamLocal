@@ -27,10 +27,7 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const image =
-    metaImage && metaImage.src
-      ? `${site.siteMetadata.url}${metaImage.src}`
-      : null
+  const image = `${url}${metaImage}`
 
   return (
     <Helmet
@@ -55,6 +52,14 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: image,
+        },
+        {
+          property: `og:url`,
+          content: url,
         },
         {
           name: `twitter:card`,
@@ -117,7 +122,11 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 }
 
 export default SEO
