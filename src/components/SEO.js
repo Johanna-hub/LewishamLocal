@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, image: metaImage, url }) {
+function SEO({ description, lang, meta, title, url }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const image = `${url}${metaImage}`
+  const seoImage = `${site.siteMetadata.url}${site.siteMetadata.image}`
 
   return (
     <Helmet
@@ -55,7 +55,7 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
         },
         {
           property: `og:image`,
-          content: image,
+          content: seoImage,
         },
         {
           property: `og:url`,
@@ -77,34 +77,11 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:image`,
+          content: seoImage,
+        },
       ]
-      .concat(
-        metaImage
-          ? [
-              {
-                property: "og:image",
-                content: image,
-              },
-              {
-                property: "og:image:width",
-                content: metaImage.width,
-              },
-              {
-                property: "og:image:height",
-                content: metaImage.height,
-              },
-              {
-                name: "twitter:card",
-                content: "summary_large_image",
-              },
-            ]
-          : [
-              {
-                name: "twitter:card",
-                content: "summary",
-              },
-            ]
-      )
       .concat(meta)}
     />
   )
@@ -122,11 +99,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }),
+  image: PropTypes.string,
 }
 
 export default SEO
