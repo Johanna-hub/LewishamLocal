@@ -56,10 +56,6 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
           content: `website`,
         },
         {
-          property: `og:image`,
-          content: image,
-        },
-        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -74,10 +70,6 @@ function SEO({ description, lang, meta, title, image: metaImage, url }) {
         {
           name: `twitter:description`,
           content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: image,
         },
       ]
       .concat(
